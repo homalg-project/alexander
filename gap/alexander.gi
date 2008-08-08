@@ -160,7 +160,8 @@ end );
 ##
 InstallGlobalFunction( SimplicialBoundaryMap,
   function( arg )
-    local nargs, Cc, Cb, ZZ, R, d, b, s, b_s, pos, z, i;
+    local nargs, Cc, Cb, ZZ, R, cc, cb, d, b, one, minus_one,
+          s, b_s, pos, z, i;
     
     nargs := Length( arg );
     
@@ -183,16 +184,15 @@ InstallGlobalFunction( SimplicialBoundaryMap,
         R := ZZ;
     fi;
     
-    if Cb = [ ] then
-        if Cc = [ ] then
-            return HomalgZeroMatrix( 0, 0, R );
-        else
-            return HomalgZeroMatrix( Length( Cc ), 0, R );
-        fi;
+    cc := Length( Cc );
+    cb := Length( Cb );
+    
+    if cb = 0 then
+        return HomalgZeroMatrix( cc, 0, R );
     fi;
     
-    if Cc = [ ] then
-        return HomalgZeroMatrix( 0, Length( Cb ), R );
+    if cc = 0 then
+        return HomalgZeroMatrix( 0, cb, R );
     fi;
     
     d := Length( Cc[1] );
@@ -201,31 +201,39 @@ InstallGlobalFunction( SimplicialBoundaryMap,
         Error( "wrong input\n" );
     fi;
     
-    b := [ ];
+    b := HomalgInitialMatrix( cc, cb, R );
+    
+    one := One( R );
+    minus_one := MinusOne( R );
     
     ## for every simplex s do
-    for s in Cc do
+    for s in [ 1 .. cc ] do
         ## compute the boundary of s
-        b_s := List( [ 1 .. d ], a -> ShallowCopy( s ) );
+        b_s := List( [ 1 .. d ], a -> ShallowCopy( Cc[s] ) );
         Apply( [ 1 .. d ], a -> Remove( b_s[a], a ) );
         pos := List( b_s, a -> Position( Cb, a ) );
-        z := ListWithIdenticalEntries( Length( Cb ), 0 );
         for i in [ 1 .. d ] do
             if IsInt( pos[i] ) then
-                z[pos[i]] := (-1)^(i - 1);
+                if IsOddInt( i ) then
+                    SetEntryOfHomalgMatrix( b, s, pos[i], one );	## this is not a mistake: we start couting at 1 and not at 0, therefore the (-1)^(i-1)
+                else
+                    SetEntryOfHomalgMatrix( b, s, pos[i], minus_one );
+                fi;
             fi;
         od;
-        Add( b, z );
     od;
     
-    return HomalgMatrix( HomalgMatrix( b, ZZ ), R );
+    ResetFilterObj( b, IsInitialMatrix );
+    ResetFilterObj( b, IsMutableMatrix );
+    
+    return b;
     
 end );
 
 ##
 InstallGlobalFunction( SimplicialChainMap,
   function( arg )
-    local nargs, Cd, Cr, ZZ, R, b, s, z, pos;
+    local nargs, Cd, Cr, ZZ, R, cd, cr, b, one, s, pos;
     
     nargs := Length( arg );
     
@@ -248,30 +256,32 @@ InstallGlobalFunction( SimplicialChainMap,
         R := ZZ;
     fi;
     
-    if Cr = [ ] then
-        if Cd = [ ] then
-            return HomalgZeroMatrix( 0, 0, R );
-        else
-            return HomalgZeroMatrix( Length( Cd ), 0, R );
-        fi;
+    cd := Length( Cd );
+    cr := Length( Cr );
+    
+    if cr = 0 then
+        return HomalgZeroMatrix( cd, 0, R );
     fi;
     
-    if Cd = [ ] then
-        return HomalgZeroMatrix( 0, Length( Cr ), R );
+    if cd = 0 then
+        return HomalgZeroMatrix( 0, cr, R );
     fi;
     
-    b := [ ];
+    b := HomalgInitialMatrix( cd, cr, R );
     
-    for s in Cd do
-        z := ListWithIdenticalEntries( Length( Cr ), 0 );
-        pos := Position( Cr, s );
+    one := One( R );
+    
+    for s in [ 1 .. cd ] do
+        pos := Position( Cr, Cd[s] );
         if pos <> fail then
-            z[pos] := 1;
+            SetEntryOfHomalgMatrix( b, s, pos, one );
         fi;
-        Add( b, z );
     od;
     
-    return HomalgMatrix( HomalgMatrix( b, ZZ ), R );
+    ResetFilterObj( b, IsInitialMatrix );
+    ResetFilterObj( b, IsMutableMatrix );
+    
+    return b;
     
 end );
 
