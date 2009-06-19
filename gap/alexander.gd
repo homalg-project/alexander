@@ -42,10 +42,6 @@ DeclareGlobalFunction( "SimplicialChainMap" );
 
 DeclareGlobalFunction( "SimplicialData" );
 
-DeclareGlobalFunction( "_UCT_Homology" );	## FIXME: generalize and move to homalg
-
-DeclareGlobalFunction( "_UCT_Cohomology" );	## FIXME: generalize and move to homalg
-
 # basic operations:
 
 DeclareOperation( "SimplicialCycle",
