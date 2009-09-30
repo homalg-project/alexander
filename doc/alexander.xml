@@ -12,6 +12,7 @@
 	  <!ENTITY python '<Package>python</Package>'>
 	  <!ENTITY cython '<Package>cython</Package>'>
 	  <!ENTITY C '<Package>C</Package>'>
+	  <!ENTITY Kenzo '<Package>Kenzo</Package>'>
 	  <!ENTITY MAGMA '<Package>MAGMA</Package>'>
 	  <!ENTITY IO '<Package>IO</Package>'>
 	  <!ENTITY homalg "<Package>homalg</Package>">
@@ -58,6 +59,7 @@
 
 <#Include SYSTEM "intro.xml">
 <#Include SYSTEM "install.xml">
+<#Include SYSTEM "examples.xml">
 </Body>
 
 <Bibliography Databases="alexanderBib.xml"/>

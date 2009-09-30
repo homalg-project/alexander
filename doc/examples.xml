@@ -11,7 +11,10 @@ This chapter gives examples for the usage of this package.
 <Chapter Label="examples">
 <Heading>Examples</Heading>
 
-Here comes text.<P/>
+<#Include Label="Torus">
+<#Include Label="RP^2">
+<#Include Label="(Torus,S^1)">
+<#Include Label="(RP^2,S^1)">
 
 <!-- ############################################################ -->
 

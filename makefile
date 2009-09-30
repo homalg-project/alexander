@@ -5,7 +5,7 @@ doc: doc/manual.six
 doc/manual.six: makedoc.g maketest.g \
 		PackageInfo.g VERSION \
 		doc/alexander.bib doc/*.xml \
-		gap/*.gd gap/*.gi
+		gap/*.gd gap/*.gi examples/*.g
 	        gapL makedoc.g
 
 clean:

@@ -14,7 +14,9 @@ behind the package.
 <Chapter Label="intro">
 <Heading>Introduction</Heading>
 
-<Cite Key="homalg-project"/>
+This is a sample package showing how to use the &homalg; package <Cite Key="homalg-package"/>
+to perform simple computations in algebraic topology. For serious applications please use
+&Kenzo; <Cite Key="kenzo"/>. You are invited to extend &alexander; in all directions.
 
 </Chapter>
 
