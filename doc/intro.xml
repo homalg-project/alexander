@@ -16,7 +16,12 @@ behind the package.
 
 This is a sample package showing how to use the &homalg; package <Cite Key="homalg-package"/>
 to perform simple computations in algebraic topology. For serious applications please use
-&Kenzo; <Cite Key="kenzo"/>. You are invited to extend &alexander; in all directions.
+&Kenzo; <Cite Key="kenzo"/>. You are invited to extend &alexander; in all directions. <P/>
+
+The package is named after the influential topologist
+<Alt Only="Text">James Waddell Alexander (http://en.wikipedia.org/wiki/James_Waddell_Alexander)</Alt><Alt Only="HTML">
+<URL Text="James Waddell Alexander">http://en.wikipedia.org/wiki/James_Waddell_Alexander</URL></Alt><Alt Only="LaTeX">
+<URL Text="James Waddell Alexander">http://en.wikipedia.org/wiki/James_Waddell_Alexander</URL></Alt>.
 
 </Chapter>
 
