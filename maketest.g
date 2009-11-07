@@ -17,8 +17,13 @@ list := [
          "../examples/(RP^2,S^1).g",
          ];
 
-TestManualExamples( "doc", "alexander.xml", list );
+size := SizeScreen( );
+SizeScreen([80]);
+
+TestManualExamples( DirectoriesPackageLibrary( "alexander", "doc" )[1]![1], "alexander.xml", list );
 
 GAPDocManualLab( "alexander" );
+
+SizeScreen( size );
 
 quit;

@@ -6,16 +6,16 @@ doc/manual.six: makedoc.g maketest.g \
 		PackageInfo.g VERSION \
 		doc/alexander.bib doc/*.xml \
 		gap/*.gd gap/*.gi examples/*.g
-	        gapL makedoc.g
+	        gap makedoc.g
 
 clean:
 	(cd doc ; ./clean)
 
 test:	doc
-	gapL -x 80 maketest.g
+	gap maketest.g
 
 archive: test
-	(mkdir -p ../tar; cd ..; tar czvf tar/alexander.tar.gz --exclude ".DS_Store" --exclude "*~" alexander/doc/*.* alexander/gap/*.{gi,gd} alexander/{CHANGES,PackageInfo.g,README,VERSION,init.g,read.g,makedoc.g,makefile,maketest.g} alexander/examples/*.g)
+	(mkdir -p ../tar; cd ..; tar czvf tar/alexander.tar.gz --exclude ".DS_Store" --exclude "*~" alexander/doc/*.* alexander/doc/clean alexander/gap/*.{gi,gd} alexander/{CHANGES,PackageInfo.g,README,VERSION,init.g,read.g,makedoc.g,makefile,maketest.g} alexander/examples/*.g)
 
 WEBPOS=~/gap/pkg/alexander/public_html
 WEBPOS_FINAL=~/Sites/homalg-project/alexander
