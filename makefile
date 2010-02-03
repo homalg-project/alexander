@@ -29,6 +29,6 @@ towww: archive
 	cp README ${WEBPOS}/README.alexander
 	cp doc/manual.pdf ${WEBPOS}/alexander.pdf
 	cp doc/*.{css,html} ${WEBPOS}
-	cp ${WEBPOS}/* ${WEBPOS_FINAL}
 	cp ../tar/alexander.tar.gz ${WEBPOS}
+	cp ${WEBPOS}/* ${WEBPOS_FINAL}
 
