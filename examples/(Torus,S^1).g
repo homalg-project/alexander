@@ -7,7 +7,7 @@
 ##  a nontrivial homology cycle.
 ##  <Example><![CDATA[
 ##  gap> R := HomalgRingOfIntegers( );
-##  <A homalg internal ring>
+##  <An internal ring>
 ##  gap> Torus := [ [ 1, 2, 5 ], [ 1, 4, 5 ], [ 2, 3, 6 ], [ 2, 5, 6 ], [ 1, 3, 4 ],
 ##  > [ 3, 4, 6 ], [ 4, 7, 8 ], [ 4, 5, 8 ], [ 5, 8, 9 ], [ 5, 6, 9 ],
 ##  > [ 6, 7, 9 ], [ 4, 6, 7 ], [ 1, 2, 7 ], [ 2, 7, 8 ], [ 2, 3, 8 ],
