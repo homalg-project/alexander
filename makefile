@@ -17,7 +17,7 @@ test:	doc
 archive: test
 	(mkdir -p ../tar; cd ..; tar czvf tar/alexander.tar.gz --exclude ".DS_Store" --exclude "*~" alexander/doc/*.* alexander/doc/clean alexander/gap/*.{gi,gd} alexander/{CHANGES,PackageInfo.g,README,VERSION,init.g,read.g,makedoc.g,makefile,maketest.g} alexander/examples/*.g)
 
-WEBPOS=~/gap/pkg/alexander/public_html
+WEBPOS=~/software/pkg/alexander/public_html
 WEBPOS_FINAL=~/Sites/homalg-project/alexander
 
 towww: archive
