@@ -28,7 +28,7 @@ DeclareCategory( "IsHomalgSimplicialComplex",
 
 ####################################
 #
-# global functions and methods:
+# global functions and operations:
 #
 ####################################
 
