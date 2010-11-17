@@ -25,9 +25,9 @@
 ##  <An exact triangle containing 3 morphisms of left complexes at degrees 
 ##  [ 1, 2, 3, 1 ]>
 ##  gap> lehs := LongSequence( T );
-##  <A "complex" containing 8 morphisms of left modules at degrees [ 0 .. 8 ]>
+##  <A sequence containing 8 morphisms of left modules at degrees [ 0 .. 8 ]>
 ##  gap> ByASmallerPresentation( lehs );
-##  <A non-zero "complex" containing 8 morphisms of left modules at degrees 
+##  <A non-zero sequence containing 8 morphisms of left modules at degrees
 ##  [ 0 .. 8 ]>
 ##  gap> IsExactSequence( lehs );
 ##  true
@@ -104,9 +104,9 @@
 ##  <An exact cotriangle containing 3 morphisms of right cocomplexes at degrees 
 ##  [ 0, 1, 2, 0 ]>
 ##  gap> lecs := LongSequence( t );
-##  <A "cocomplex" containing 8 morphisms of right modules at degrees [ 0 .. 8 ]>
+## <A cosequence containing 8 morphisms of right modules at degrees [ 0 .. 8 ]>
 ##  gap> ByASmallerPresentation( lecs );
-##  <A non-zero "cocomplex" containing 8 morphisms of right modules at degrees 
+##  <A non-zero cosequence containing 8 morphisms of right modules at degrees
 ##  [ 0 .. 8 ]>
 ##  gap> IsExactSequence( lecs );
 ##  true

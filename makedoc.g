@@ -20,6 +20,8 @@ list := [
          "../examples/(RP^2,S^1).g",
          ];
 
+PrintTo( "VERSION", PackageInfo( "alexander" )[1].Version );
+
 MakeGAPDocDoc( "doc", "alexander", list, "alexander" );
 
 GAPDocManualLab( "alexander" );
