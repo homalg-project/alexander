@@ -358,7 +358,7 @@ InstallGlobalFunction( SimplicialData,
     
     map := HomalgMap( map, CertainObject( ba, xi_min ), CertainObject( bx, xi_min ) );
     
-    iota := HomalgChainMap( map, ba, bx );
+    iota := HomalgChainMorphism( map, ba, bx );
     
     SetIsMonomorphism( iota, true );
     
@@ -378,7 +378,7 @@ InstallGlobalFunction( SimplicialData,
     
     map := HomalgMap( map, CertainObject( bx, xi_min ), CertainObject( bxa, xi_min ) );
     
-    nu := HomalgChainMap( map, bx, bxa );
+    nu := HomalgChainMorphism( map, bx, bxa );
     
     for i in [ xi_min + 1 .. xi_max ] do
         
