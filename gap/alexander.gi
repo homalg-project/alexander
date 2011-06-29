@@ -224,7 +224,7 @@ InstallGlobalFunction( SimplicialBoundaryMap,
     od;
     
     ResetFilterObj( b, IsInitialMatrix );
-    ResetFilterObj( b, IsMutableMatrix );
+    ResetFilterObj( b, IsMutable );
     
     return b;
     
@@ -279,7 +279,7 @@ InstallGlobalFunction( SimplicialChainMap,
     od;
     
     ResetFilterObj( b, IsInitialMatrix );
-    ResetFilterObj( b, IsMutableMatrix );
+    ResetFilterObj( b, IsMutable );
     
     return b;
     
