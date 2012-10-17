@@ -15,7 +15,7 @@ test:	doc
 	gap maketest.g
 
 archive: test
-	(mkdir -p ../tar; cd ..; tar czvf tar/alexander.tar.gz --exclude ".DS_Store" --exclude "*~" alexander/doc/*.* alexander/doc/clean alexander/gap/*.{gi,gd} alexander/{CHANGES,PackageInfo.g,README,VERSION,init.g,read.g,makedoc.g,makefile,maketest.g} alexander/examples/*.g)
+	(mkdir -p ../tar; cd ..; tar czvf tar/alexander.tar.gz --exclude ".DS_Store" --exclude "*~" alexander/doc/*.* alexander/doc/clean alexander/gap/*.{gi,gd} alexander/{CHANGES,PackageInfo.g,README,VERSION,init.g,read.g,makedoc.g,makefile,maketest.g,ListOfDocFiles.g} alexander/examples/*.g)
 
 WEBPOS=public_html
 WEBPOS_FINAL=~/Sites/homalg-project/alexander

@@ -26,4 +26,4 @@ MakeGAPDocDoc( "doc", "alexander", list, "alexander" );
 
 GAPDocManualLab( "alexander" );
 
-quit;
+QUIT;
