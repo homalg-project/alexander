@@ -52,7 +52,7 @@
 ##  Z^(1 x 1)
 ##  ---------------------------
 ##  gap> Z2 := LeftPresentation( [ 2 ], R );
-##  <A cyclic left module presented by 1 relation for a cyclic generator>
+##  <A cyclic torsion left module presented by 1 relation for a cyclic generator>
 ##  gap> d2 := d * Z2;
 ##  <A complex containing 2 morphisms of left modules at degrees [ 0 .. 2 ]>
 ##  gap> HZ2_Torus := Homology( d2 );
