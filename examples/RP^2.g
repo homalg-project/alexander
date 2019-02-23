@@ -8,7 +8,7 @@
 ##  Z
 ##  gap> RP2 := [ [ 1, 2, 3 ], [ 1, 3, 6 ], [ 2, 5, 6 ], [ 1, 2, 5 ], [ 1, 4, 6 ],
 ##  > [ 2, 4, 6 ], [ 3, 5, 6 ], [ 1, 4, 5 ], [ 2, 3, 4 ], [ 3, 4, 5 ] ];;
-##  gap> RP2 := SimplicialComplex( RP2 );
+##  gap> RP2 := SimplicialComplexConstructor( RP2 );
 ##  <A simplicial 2-complex>
 ##  gap> d := SimplicialData( RP2, R );
 ##  <A complex containing 2 morphisms of left modules at degrees [ 0 .. 2 ]>
@@ -102,7 +102,7 @@ R := HomalgRingOfIntegers( );
 
 RP2 := [[1, 2, 3], [1, 3, 6], [2, 5, 6], [1, 2, 5], [1, 4, 6], [2, 4, 6], [3, 5, 6], [1, 4, 5], [2, 3, 4], [3, 4, 5]];
 
-RP2 := SimplicialComplex( RP2 );
+RP2 := SimplicialComplexConstructor( RP2 );
 
 d := SimplicialData( RP2, R );
 

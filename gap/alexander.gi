@@ -22,9 +22,9 @@ InstallValue( ALEXANDER,
             )
 );
 
-# two new representations for the GAP-category IsHomalgSimplicialComplex:
-DeclareRepresentation( "IsHomalgSimplicialComplexRep",
-        IsHomalgSimplicialComplex,
+# two new representations for the GAP-category IsHomalgSimplicialComplexConstructor:
+DeclareRepresentation( "IsHomalgSimplicialComplexConstructorRep",
+        IsHomalgSimplicialComplexConstructor,
         [ ] );
 
 ####################################
@@ -34,13 +34,13 @@ DeclareRepresentation( "IsHomalgSimplicialComplexRep",
 ####################################
 
 # a new family:
-BindGlobal( "TheFamilyOfHomalgSimplicialComplexes",
-        NewFamily( "TheFamilyOfHomalgSimplicialComplexes" ) );
+BindGlobal( "TheFamilyOfHomalgSimplicialComplexConstructores",
+        NewFamily( "TheFamilyOfHomalgSimplicialComplexConstructores" ) );
 
 # a new type:
-BindGlobal( "TheTypeHomalgSimplicialComplex",
-        NewType( TheFamilyOfHomalgSimplicialComplexes,
-                IsHomalgSimplicialComplexRep ) );
+BindGlobal( "TheTypeHomalgSimplicialComplexConstructor",
+        NewType( TheFamilyOfHomalgSimplicialComplexConstructores,
+                IsHomalgSimplicialComplexConstructorRep ) );
 
 ####################################
 #
@@ -51,7 +51,7 @@ BindGlobal( "TheTypeHomalgSimplicialComplex",
 ##
 InstallMethod( SimplicialFaces,
         "for homalg simplicial complexes",
-        [ IsHomalgSimplicialComplex, IsInt ],
+        [ IsHomalgSimplicialComplexConstructor, IsInt ],
         
   function( C, i )
     
@@ -64,7 +64,7 @@ InstallMethod( SimplicialFaces,
 end );
 
 ##
-InstallGlobalFunction( SimplicialComplex,
+InstallGlobalFunction( SimplicialComplexConstructor,
   function( arg )
     local nargs, L, cmax, dim, cmin, mx, ar3, C, i, c, p, b, SC;
     
@@ -150,7 +150,7 @@ InstallGlobalFunction( SimplicialComplex,
     
     ## Objectify:
     ObjectifyWithAttributes(
-            SC, TheTypeHomalgSimplicialComplex,
+            SC, TheTypeHomalgSimplicialComplexConstructor,
             Dimension, cmax );
     
     return SC;
@@ -326,7 +326,7 @@ InstallGlobalFunction( SimplicialData,
         
         return bx;
         
-    elif nargs > 1 and IsHomalgSimplicialComplex( arg[2] ) then
+    elif nargs > 1 and IsHomalgSimplicialComplexConstructor( arg[2] ) then
         
         CA := arg[2];
         
@@ -348,7 +348,7 @@ InstallGlobalFunction( SimplicialData,
     
     ## this is not really a simplicial complex but it does the job,
     ## i.e. the cokernel complex bxa below is correctly defined
-    Objectify( TheTypeHomalgSimplicialComplex, CXA );
+    Objectify( TheTypeHomalgSimplicialComplexConstructor, CXA );
     
     bx := SimplicialData( CX, R );
     ba := SimplicialData( CA, R );
@@ -424,7 +424,7 @@ end );
 ##
 InstallMethod( SimplicialCycle,
         "for homalg simplicial complexes",
-        [ IsHomalgComplex and IsGradedObject, IsHomalgSimplicialComplexRep, IsInt, IsPosInt ],
+        [ IsHomalgComplex and IsGradedObject, IsHomalgSimplicialComplexConstructorRep, IsInt, IsPosInt ],
         
   function( H, C, q, i )
     
@@ -435,7 +435,7 @@ end );
 ##
 InstallMethod( SimplicialCycle,
         "for homalg simplicial complexes",
-        [ IsHomalgSimplicialComplexRep, IsInt, IsPosInt ],
+        [ IsHomalgSimplicialComplexConstructorRep, IsInt, IsPosInt ],
         
   function( C, q, i )
     
@@ -452,7 +452,7 @@ end );
 ##
 InstallMethod( ViewObj,
         "for homalg simplicial complexes",
-        [ IsHomalgSimplicialComplex ],
+        [ IsHomalgSimplicialComplexConstructor ],
         
   function( o )
     

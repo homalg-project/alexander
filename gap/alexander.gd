@@ -23,7 +23,7 @@ DeclareGlobalVariable( "ALEXANDER" );
 
 # a new GAP-category:
 
-DeclareCategory( "IsHomalgSimplicialComplex",
+DeclareCategory( "IsHomalgSimplicialComplexConstructor",
         IsAttributeStoringRep );
 
 ####################################
@@ -34,7 +34,7 @@ DeclareCategory( "IsHomalgSimplicialComplex",
 
 # constructor methods:
 
-DeclareGlobalFunction( "SimplicialComplex" );
+DeclareGlobalFunction( "SimplicialComplexConstructor" );
 
 DeclareGlobalFunction( "SimplicialBoundaryMap" );
 
@@ -48,11 +48,11 @@ DeclareOperation( "SimplicialCycle",
         [ IsHomalgMatrix, IsList ] );
 
 DeclareOperation( "SimplicialCycle",
-        [ IsHomalgComplex, IsHomalgSimplicialComplex, IsInt, IsPosInt ] );
+        [ IsHomalgComplex, IsHomalgSimplicialComplexConstructor, IsInt, IsPosInt ] );
 
 DeclareOperation( "SimplicialCycle",
-        [ IsHomalgSimplicialComplex, IsInt, IsPosInt ] );
+        [ IsHomalgSimplicialComplexConstructor, IsInt, IsPosInt ] );
 
 DeclareOperation( "SimplicialFaces",
-        [ IsHomalgSimplicialComplex, IsInt ] );
+        [ IsHomalgSimplicialComplexConstructor, IsInt ] );
 

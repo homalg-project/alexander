@@ -12,11 +12,11 @@
 ##  > [ 3, 4, 6 ], [ 4, 7, 8 ], [ 4, 5, 8 ], [ 5, 8, 9 ], [ 5, 6, 9 ],
 ##  > [ 6, 7, 9 ], [ 4, 6, 7 ], [ 1, 2, 7 ], [ 2, 7, 8 ], [ 2, 3, 8 ],
 ##  > [ 3, 8, 9 ], [ 1, 3, 9 ], [ 1, 7, 9 ] ];;
-##  gap> Torus := SimplicialComplex( Torus );
+##  gap> Torus := SimplicialComplexConstructor( Torus );
 ##  <A simplicial 2-complex>
 ##  gap> cyc := [[3, 6], [3, 9], [6, 9]];
 ##  [ [ 3, 6 ], [ 3, 9 ], [ 6, 9 ] ]
-##  gap> S1 := SimplicialComplex( cyc, Dimension( Torus ) );
+##  gap> S1 := SimplicialComplexConstructor( cyc, Dimension( Torus ) );
 ##  <A simplicial 1-complex>
 ##  gap> d := SimplicialData( Torus, S1, R );
 ##  <A short exact sequence containing 2 morphisms of left complexes at degrees 
@@ -185,12 +185,12 @@ R := HomalgRingOfIntegers( );
 
 Torus := [[1,2,5],[1,4,5],[2,3,6],[2,5,6],[1,3,4],[3,4,6],[4,7,8],[4,5,8],[5,8,9],[5,6,9],[6,7,9],[4,6,7],[1,2,7],[2,7,8],[2,3,8],[3,8,9],[1,3,9],[1,7,9]];
 
-Torus := SimplicialComplex( Torus );
+Torus := SimplicialComplexConstructor( Torus );
 
 #cyc := SimplicialCycle( Torus, 1, 1 );
 cyc := [[3, 6], [3, 9], [6, 9]];
 
-S1 := SimplicialComplex( cyc, Dimension( Torus ) );
+S1 := SimplicialComplexConstructor( cyc, Dimension( Torus ) );
 
 d := SimplicialData( Torus, S1, R );
 

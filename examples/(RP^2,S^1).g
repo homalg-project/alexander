@@ -10,11 +10,11 @@
 ##  Z
 ##  gap> RP2 := [ [ 1, 2, 3 ], [ 1, 3, 6 ], [ 2, 5, 6 ], [ 1, 2, 5 ], [ 1, 4, 6 ],
 ##  > [ 2, 4, 6 ], [ 3, 5, 6 ], [ 1, 4, 5 ], [ 2, 3, 4 ], [ 3, 4, 5 ] ];;
-##  gap> RP2 := SimplicialComplex( RP2 );
+##  gap> RP2 := SimplicialComplexConstructor( RP2 );
 ##  <A simplicial 2-complex>
 ##  gap> cyc := SimplicialCycle( RP2, 1, 1 );
 ##  [ [ 4, 5 ], [ 4, 6 ], [ 5, 6 ] ]
-##  gap> S1 := SimplicialComplex( cyc, Dimension( RP2 ) );
+##  gap> S1 := SimplicialComplexConstructor( cyc, Dimension( RP2 ) );
 ##  <A simplicial 1-complex>
 ##  gap> d := SimplicialData( RP2, S1, R );
 ##  <A short exact sequence containing 2 morphisms of left complexes at degrees 
@@ -181,11 +181,11 @@ R := HomalgRingOfIntegers( );
 
 RP2 := [[1, 2, 3], [1, 3, 6], [2, 5, 6], [1, 2, 5], [1, 4, 6], [2, 4, 6], [3, 5, 6], [1, 4, 5], [2, 3, 4], [3, 4, 5]];
 
-RP2 := SimplicialComplex( RP2 );
+RP2 := SimplicialComplexConstructor( RP2 );
 
 cyc := SimplicialCycle( RP2, 1, 1 );
 
-S1 := SimplicialComplex( cyc, Dimension( RP2 ) );
+S1 := SimplicialComplexConstructor( cyc, Dimension( RP2 ) );
 
 d := SimplicialData( RP2, S1, R );
 
