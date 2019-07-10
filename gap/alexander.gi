@@ -215,9 +215,9 @@ InstallGlobalFunction( SimplicialBoundaryMap,
         for i in [ 1 .. d ] do
             if IsInt( pos[i] ) then
                 if IsOddInt( i ) then
-                    SetMatElm( b, s, pos[i], one );	## this is not a mistake: we start couting at 1 and not at 0, therefore the (-1)^(i-1)
+                    b[ s, pos[i] ] := one;	## this is not a mistake: we start couting at 1 and not at 0, therefore the (-1)^(i-1)
                 else
-                    SetMatElm( b, s, pos[i], minus_one );
+                    b[ s, pos[i] ] := minus_one;
                 fi;
             fi;
         od;
@@ -274,7 +274,7 @@ InstallGlobalFunction( SimplicialChainMap,
     for s in [ 1 .. cd ] do
         pos := Position( Cr, Cd[s] );
         if pos <> fail then
-            SetMatElm( b, s, pos, one );
+            b[ s, pos ] := one;
         fi;
     od;
     
@@ -415,7 +415,7 @@ InstallMethod( SimplicialCycle,
         Error( "the cycle and the set of simplicies are incompatible\n" );
     fi;
     
-    l := Filtered( [ 1 .. l ], a -> not IsZero( MatElm( cycle, 1, a ) ) );
+    l := Filtered( [ 1 .. l ], a -> not IsZero( cycle[ 1, a ] ) );
     
     return simplices{ l };
     
